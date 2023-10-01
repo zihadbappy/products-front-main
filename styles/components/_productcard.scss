@@ -1,0 +1,101 @@
+
+.product-card{
+    max-width: 320px;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+    img{
+        height: 200px;
+        width: 320px;
+    }
+
+    .card-container{
+        max-width: 310px;
+        padding: 10px;
+        margin: 0 auto;
+        
+        .card-top-sec{
+            display: flex;
+            gap: 30px;
+            justify-content: space-between;
+        }
+        .card-content{
+            h2{
+                color: #010038;
+                font-family: Satoshi;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 700;
+                margin: 5px 0;
+            }
+            p{
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 1.4;
+            }
+        }
+        .user-info{
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            .avatar-img{
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+            }
+            h3{
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 500;
+            }
+            h2{
+                font-size: 13px;
+                font-style: normal;
+                font-weight: 300;
+            }
+        }
+    }
+    &:hover{
+        background: rgba(104, 69, 241, 0.20);
+        
+    }
+}
+
+
+.blog-genre{
+    width: 100px;
+    border-radius: 5px;
+    background-color: #6845F1;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    p{
+        color: #FFF;
+        text-align: center;
+        justify-content: center;       
+        align-items: center;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+    }
+}
+.blog-card:hover .blog-genre {
+    background-color: #FFF;
+    p{
+        color: #000;
+    }
+}
+.read-duration {
+    color: #780AC0;
+    text-align: center;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    
+}
+
