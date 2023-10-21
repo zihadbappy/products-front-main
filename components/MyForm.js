@@ -3,6 +3,8 @@ import {Input, Select, Button, message} from 'antd';
 const { TextArea } = Input;
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import dotenv from 'dotenv';
+dotenv.config();
 
 export const MyForm = () => {
 
@@ -19,8 +21,8 @@ export const MyForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const baseURL = 'http://localhost:5000/api/products';
-      const response = await axios.post(`${baseURL}/create`, formData);
+      // const baseURL = process.env.BASE_URL;
+      const response = await axios.post(`${process.env.BASE_URL}/create`, formData);
       console.log(response)
       if (response.status === 200) {
         message.success('Product added successfully');

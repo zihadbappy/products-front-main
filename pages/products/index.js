@@ -4,6 +4,8 @@ import axios from 'axios';
 import { ProductCard } from '../../components/ProductCard';
 import { Button } from 'antd';
 import { useRouter } from 'next/router';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const Products = () => {
   const router = useRouter();
@@ -18,8 +20,9 @@ const Products = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const baseURL = 'http://localhost:5000/api/products';
-        const response = await axios.get(baseURL);
+        // const baseURL = 'http://localhost:5000/api/products';
+        // const baseURL = process.env.BASE_URL;
+        const response = await axios.get(`${process.env.BASE_URL}`);
         console.log(response.data);
         setProductList(response.data);
       } catch (error) {
