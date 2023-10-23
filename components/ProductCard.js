@@ -94,7 +94,7 @@ export const ProductCard = ({ product, removeProductFromList, updateProductInLis
             <p>${price}</p>
           </div>
 
-          <Button type='primary' onClick={showModal} style={{ backgroundColor: 'green', borderColor: 'green' }}>
+          <Button data-testid="edit-button" type='primary' onClick={showModal} style={{ backgroundColor: 'green', borderColor: 'green' }}>
             Edit
           </Button>
 
@@ -119,23 +119,23 @@ export const ProductCard = ({ product, removeProductFromList, updateProductInLis
               <Button key='cancel' onClick={handleCancel}>
                 Cancel
               </Button>,
-              <Button key='submit' type='primary' onClick={handleSubmit}>
+              <Button data-cy="save" key='submit' type='primary' onClick={handleSubmit}>
                 Save
               </Button>,
             ]}
           >
             <Form layout='vertical'>
               <Form.Item label='Name'>
-                <Input name='name' value={formData.name} onChange={handleFormChange} />
+                <Input data-cy="productName" name='name' value={formData.name} onChange={handleFormChange} />
               </Form.Item>
               <Form.Item label='Image'>
-                <Input name='image' value={formData.image} onChange={handleFormChange} />
+                <Input data-cy="image" name='image' value={formData.image} onChange={handleFormChange} />
               </Form.Item>
               <Form.Item label='Description'>
-                <Input.TextArea name='description' value={formData.description} onChange={handleFormChange} />
+                <Input.TextArea data-cy="textArea" name='description' value={formData.description} onChange={handleFormChange} />
               </Form.Item>
               <Form.Item label='Price'>
-                <Input name='price' value={formData.price} onChange={handleFormChange} />
+                <Input data-cy="price" name='price' value={formData.price} onChange={handleFormChange} />
               </Form.Item>
               <Form.Item label='Category'>
                 <Select
@@ -144,6 +144,7 @@ export const ProductCard = ({ product, removeProductFromList, updateProductInLis
                   value={formData.category}
                   onChange={(value) => setFormData({ ...formData, category: value })}
                   style={{ width: '100%' }}
+                  data-cy="category"
                   options={[
                     {
                       value: 'Electronics',
@@ -162,11 +163,12 @@ export const ProductCard = ({ product, removeProductFromList, updateProductInLis
               </Form.Item>
 
               <Form.Item label='Brand'>
-                <Input name='brand' value={formData.brand} onChange={handleFormChange} />
+                <Input data-cy="brand" name='brand' value={formData.brand} onChange={handleFormChange} />
               </Form.Item>
               <Form.Item label='Stock Quantity'>
                 <Input
                   name='stockQuantity'
+                  data-cy="quantity"
                   value={formData.stockQuantity}
                   onChange={handleFormChange}
                 />
