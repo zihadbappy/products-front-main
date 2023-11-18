@@ -19,6 +19,15 @@ pipeline {
                 '''
             }
         }
+        stage('Deploy') {
+            steps {
+                sh'''
+                    echo "Deploying into swarm new..."
+                    ssh ubuntu@54.209.93.110 docker service update --image transformation2/snt-jenkins-products-front:v$BUILD_NUMBER products_frontend
+                '''
+            }
+    }
+
        
 }
 }
