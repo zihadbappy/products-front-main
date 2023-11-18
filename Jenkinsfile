@@ -15,7 +15,7 @@ pipeline {
             steps {
                 sh'''
                     echo "Pushing docker image into Dockerhub..."
-                    docker push transformation2/sntjenkins-products-front:v$BUILD_NUMBER 
+                    docker push transformation2/snt-jenkins-products-front:v$BUILD_NUMBER 
                 '''
             }
         }
